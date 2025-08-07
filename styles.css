@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #6dd5fa, #2980b9);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  padding: 20px;
+}
+
+.container {
+  background-color: rgba(0, 0, 50, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Formulaire de recherche */
+.city-input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#cityInput {
+  flex-grow: 1;
+  padding: 10px 15px;
+  padding-right: 40px; /* espace pour bouton clear */
+  border-radius: 25px 0 0 25px;
+  border: none;
+  font-size: 1em;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+
+#cityInput:focus {
+  box-shadow: 0 0 8px 2px #3498db;
+}
+
+/* Bouton effacer */
+#clearBtn {
+  position: absolute;
+  right: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #bbb;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0;
+  display: none;
+  transition: color 0.3s;
+}
+
+#clearBtn:hover {
+  color: #e74c3c;
+}
+
+#clearBtn:focus {
+  outline: none;
+  color: #c0392b;
+}
+
+/* Bouton rechercher */
+#searchBtn {
+  background: #3498db;
+  border: none;
+  padding: 0 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  transition: background-color 0.3s;
+}
+
+#searchBtn:hover {
+  background-color: #2980b9;
+}
+
+/* Carte météo */
+.weather-info {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.location h2 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.location img {
+  width: 50px;
+  height: 50px;
+}
+
+.temperature {
+  font-size: 3em;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.description {
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+.loading {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+.error {
+  background: #e74c3c;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .container {
+    max-width: 90vw;
+    padding: 20px;
+  }
+  .temperature {
+    font-size: 2.5em;
+  }
+}
